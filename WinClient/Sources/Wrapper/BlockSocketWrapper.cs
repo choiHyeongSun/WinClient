@@ -108,7 +108,7 @@ namespace WinClient.Sources.Wrapper
                             revlen = 0;
                             lock (socketLock)
                             {
-                                revlen = socket.Receive(packet, sumLen, header.packetLen, SocketFlags.None);
+                                revlen = socket.Receive(packet, sumLen, header.packetLen - sumLen, SocketFlags.None);
                             }
 
                             sumLen += revlen;
